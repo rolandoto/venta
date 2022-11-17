@@ -46,9 +46,7 @@ function HomeScreen() {
         
         setLoading(true);
         try {
-            if(zona !="sur" && zona !="norte"){
-                alert("tiene que ser sur o norte")
-              
+        
             const response = await axios.post(`https://api-mongodb-production.up.railway.app/api/venta`, {
             idvend:indetificacionone,
             zona:zona,
@@ -56,7 +54,7 @@ function HomeScreen() {
             valorventa:valor 
           })
           
-            }
+            alert("agregado")
          
         } catch (error) {
           alert("el numero de indentificacion no esta registrado")
@@ -194,8 +192,9 @@ function HomeScreen() {
             <View key={e} style={styles.inputs} >
                 <Text>identificacion:  {index.idvend} </Text>
                 <Text>fecha :{index.nombre} </Text>
-                <Text>valor venta: {index.apellido} </Text>
-                <Text>valor venta: {index.correoe} </Text>
+                <Text>apellido: {index.apellido} </Text>
+                <Text>correo: {index.correoe} </Text>
+                <Text>total comision: {index.totalcomision} </Text>
             </View>
         ))}
 
